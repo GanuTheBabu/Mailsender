@@ -50,7 +50,25 @@ app.get('/send-email', (req, res) => {
     });
 });
 
+// Serve a simple HTML page at the root URL
+app.get('/', (req, res) => {
+    res.send(`
+        <html>
+        <head>
+            <title>Node.js App</title>
+        </head>
+        <body>
+            <h1>Hello, Vercel!</h1>
+            <p>Your Node.js app is running successfully.</p>
+        </body>
+        </html>
+    `);
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+// Export the Express app
+module.exports = app;
